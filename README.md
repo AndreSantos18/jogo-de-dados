@@ -5,4 +5,6 @@
 - Os usuários podem soliciar um relatório das apostas
 - Quando o usuário for apostar, ele pode selecionar a BET através de um código gerado
 ## Diagrama de Classes
-![Diagrama de Classes] 
+![Diagrama de Classes](./diagrama_de_classe.jpg)
+## Diagrama de Caso de Uso
+![Diagrama de Caso de Uso](./diagrama_caso_de_uso.jpg)
