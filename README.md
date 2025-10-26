@@ -9,4 +9,4 @@
 ## Diagrama de Caso de Uso
 ![Diagrama de Caso de Uso](./diagrama_caso_de_uso.jpg)
 ## Referências
-![Documentação oficial do GitHub](https://docs.github.com/pt)
+-[Documentação oficial do GitHub](https://docs.github.com/pt)
