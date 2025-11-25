@@ -1,0 +1,177 @@
+/* Importação da fonte (ex: Google Fonts - Open Sans ou similar) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* RESET BÁSICO */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    /* 1. FUNDO GERAL: CINZA CLARO */
+    background-color: #f0f2f5; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* CONTAINER PRINCIPAL (engloba as duas colunas) */
+.container-total {
+    display: flex;
+    width: 900px; 
+    min-height: 500px; 
+    background-color: #ffffff; 
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+}
+
+/* COLUNA ESQUERDA (VERMELHA) */
+.coluna-esquerda {
+    background-color: #b90707; /* VERMELHO PRINCIPAL */
+    width: 40%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    color: white;
+}
+
+.titulo-esquerda {
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.texto-esquerda {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* BOTÃO DA COLUNA ESQUERDA */
+.btn-login-esquerda {
+    background-color: transparent; 
+    color: white;
+    border: 2px solid white; 
+    padding: 10px 40px;
+    border-radius: 20px; 
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-login-esquerda:hover {
+    background-color: white;
+    color: #8f0707; /* VERMELHO ESCURO no hover */
+}
+
+/* COLUNA DIREITA (Formulário de Criação de Conta) */
+.coluna-direita {
+    width: 60%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.titulo-direita {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* TEXTO DE ESCOLHA DA CONTA */
+.text-escolha {
+    /* 2. CENTRALIZADO, CINZA E MENOR */
+    text-align: center; 
+    font-size: 14px; 
+    color: #777; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* GRUPO DOS BOTÕES USUÁRIO/ADMINISTRADOR */
+.tipo-conta {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+/* 3. BOTÕES USUÁRIO E ADMINISTRADOR: VERMELHO */
+.but-user, .but-admin {
+    background-color: #b90707; /* VERMELHO */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 48%; 
+    transition: background-color 0.3s;
+}
+
+.but-user:hover, .but-admin:hover {
+    background-color: #b90707; /* VERMELHO ESCURO no hover */
+}
+
+/* FORMULÁRIO DE CADASTRO */
+.form-cadastro {
+    width: 100%;
+    max-width: 300px; 
+}
+
+.input-grupo {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2; 
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.input-grupo .icon {
+    color: #777;
+    margin-right: 10px;
+}
+
+.input-grupo input {
+    border: none;
+    background: transparent;
+    outline: none; 
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* BOTÃO CADASTRAR */
+.btn-signup {
+    background-color: #b90707; /* VERMELHO PRINCIPAL */
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 20px; 
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    width: 100%; /* Para ocupar a largura total do formulário */
+}
+
+.btn-signup:hover {
+    background-color: #b90707; /* VERMELHO ESCURO no hover */
+}

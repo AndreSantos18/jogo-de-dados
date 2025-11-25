@@ -1,0 +1,100 @@
+/* RESET BÁSICO */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* CONTAINER PRINCIPAL E FUNDO ESCURO */
+.container {
+    background-color: #1a1a1a; /* Fundo preto/cinza escuro */
+    min-height: 100vh; /* Ocupa a altura total da tela */
+    display: flex;
+    flex-direction: column;
+}
+
+/* CABEÇALHO (HEADER) */
+.header {
+    display: flex;
+    justify-content: space-between; /* Alinha o título à esquerda e o botão à direita */
+    align-items: center;
+    padding: 10px 30px;
+    color: #e0e0e0; /* Cor do texto no cabeçalho */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil abaixo do header */
+}
+
+.header-title {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.btn-login {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    /* Estilo do botão de login conforme a imagem (simples, sem fundo) */
+}
+
+/* CONTEÚDO PRINCIPAL (CENTRALIZADO) */
+.main-content {
+    flex-grow: 1; /* Faz o conteúdo principal ocupar todo o espaço restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    padding: 20px;
+}
+
+/* LOGO/TÍTULO NEON */
+.logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.dice-image-placeholder {
+    /* Este é um placeholder. Você o removeria se usasse uma imagem real. */
+    width: 150px; 
+    height: 150px;
+    background-color: transparent; /* A cor dos dados na imagem é clara/branca */
+    /* Adicione aqui a imagem real dos dados */
+}
+
+.neon-title {
+    font-size: 64px; /* Tamanho grande para o título */
+    color: #fff; /* Cor base do texto */
+    text-shadow: 
+        0 0 5px #ff0000, /* Sombra interna vermelha fraca */
+        0 0 10px #ff0000, /* Sombra vermelha média */
+        0 0 20px #ff0000, /* Sombra vermelha forte */
+        0 0 40px #ff0000; /* Brilho mais difuso */
+    text-transform: uppercase;
+    letter-spacing: 5px; /* Espaçamento entre as letras */
+    margin: 0;
+    /* Ajuste para mover o título para cima/baixo se necessário */
+    transform: translateY(-50px); /* Ajusta a posição verticalmente para simular o alinhamento na imagem */
+}
+
+/* BOTÃO APOSTAR (VERMELHO) */
+.btn-apostar {
+    background-color: #ff0000; /* Cor de fundo vermelha */
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Sombra sutil para destacar */
+    transition: background-color 0.3s;
+}
+
+.btn-apostar:hover {
+    background-color: #cc0000;
+}
