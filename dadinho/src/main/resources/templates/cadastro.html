@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dadinho | Login / Criar Conta</title>
-    <link rel="stylesheet" href="css/login.css"> 
+    <link rel="stylesheet" href="/dadinho/src/main/resources/static/css/cadastro.css"> 
 </head>
 <body>
     <div class="container-total">
         <div class="coluna-esquerda">
             <h2 class="titulo-esquerda">BEM VINDO DE VOLTA</h2>
-            <p class="texto-esquerda">To keep connected with us<br>please login with your personal info</p>
-            <button class="btn-login-esquerda">login</button>
+            <p class="texto-esquerda">Conecte com sua conta<br>Insira suas informações pessoais</p>
+            <a href="login.html" class="bot-login">LOGIN</a>
         </div>
 
         <div class="coluna-direita">
@@ -38,6 +38,8 @@
             </form>
         </div>
     </div>
+
+    <a href="index.html" class="bot-index">Voltar</a>
 
 </body>
 </html>

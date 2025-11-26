@@ -1,0 +1,145 @@
+/* Importação da fonte (ex: Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+/* DEFINIÇÕES DE COR */
+:root {
+    --primary-red: #b90707; /* Vermelho principal para destaque */
+    --dark-red: #CC0000;    /* Vermelho escuro para hover */
+    --page-bg-gray: #f3f3f3; /* Fundo cinza da página */
+    --input-bg-gray: #f2f2f2; /* Fundo cinza claro dos inputs */
+    --text-color-dark: #333; /* Cor do texto principal */
+    --icon-color: #777; /* Cor dos ícones */
+}
+
+
+/* RESET BÁSICO E FUNDO */
+body, html {
+    /*margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--page-bg-gray); /* Fundo cinza da página
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ocupa a altura total da viewport */
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f2f5; 
+    
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; 
+    flex-direction: column; /* FORÇA os elementos a se empilharem */
+    
+    min-height: 100vh;
+    
+}
+
+/* CONTAINER PRINCIPAL DO FORMULÁRIO */
+.login-tela {
+    background-color: #ffffff; /* Fundo branco do formulário */
+    width: 100%;
+    max-width: 380px; /* Largura máxima para centralizar o formulário */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* TÍTULO "Logar conta" */
+.login-tela h2 {
+    font-size: 28px;
+    color: var(--text-color-dark);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* FORMULÁRIO */
+.form-login {
+    width: 100%;
+    margin-bottom: 0; 
+    max-width: 300px;
+}
+
+/* GRUPO DE INPUTS (Ícone + Campo) */
+.input-grupo {
+    display: flex;
+    align-items: center;
+    background-color: var(--input-bg-gray); /* Fundo cinza claro para os inputs */
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.input-grupo .icon {
+    color: var(--icon-color);
+    margin-right: 10px;
+}
+
+.input-grupo input {
+    border: none;
+    background: transparent;
+    outline: none; /* Remove a borda de foco padrão */
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    color: var(--text-color-dark);
+}
+
+/* BOTÃO LOGAR */
+.bot-entrar {
+    /* Cor e Estilo Vermelho */
+    background-color: var(--primary-red); 
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 20px; /* Botão arredondado */
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    width: 100%; /* Ocupa a largura total do formulário */
+    margin-bottom: 10px;
+}
+
+.bot-entrar:hover {
+    background-color: var(--dark-red); /* Escurece no hover */
+}
+
+.bot-voltar {
+    /* Aparência de Botão (Link <a>) */
+    display: inline-block;
+    text-align: center;
+    text-decoration: none; 
+    
+    /* Estilo Secundário (Borda Vermelha) */
+    background-color: transparent; 
+    color: #b90707; 
+    border: 1px solid #b90707; 
+    
+    /* Dimensões e Espaçamento */
+    padding: 8px 30px; 
+    border-radius: 20px; 
+    
+    /* CHAVE PARA O POSICIONAMENTO: Distância do formulário de login */
+    margin-top: 25px; 
+    
+    /* Tipografia */
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    transition: all 0.3s;
+}
+
+.bot-voltar:hover {
+    background-color: #f0f0f0; 
+    color: #8f0707;
+}

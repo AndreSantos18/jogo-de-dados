@@ -7,10 +7,17 @@ body, html {
 
 /* CONTAINER PRINCIPAL E FUNDO ESCURO */
 .container {
-    background-color: #1a1a1a; /* Fundo preto/cinza escuro */
+    background-color: #2e2e2e; /* Fundo preto/cinza escuro */
     min-height: 100vh; /* Ocupa a altura total da tela */
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+}
+
+.entrar{
+    text-decoration: none;
+    color: white;
+
 }
 
 /* CABEÇALHO (HEADER) */
