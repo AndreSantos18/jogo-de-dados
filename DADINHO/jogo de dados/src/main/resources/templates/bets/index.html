@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bets - Jogo dos dados</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="/dadinho/src/main/resources/static/css/dashboard.css">
+</head>
+<body>
+      <main>
+      <div class="container py-4">
+        <div th:replace="~{fragments/dashboard :: header}"></div>
+        <div th:replace="~{fragments/dashboard :: alert(${success}, ${error})}"></div>
+        <div class="row">
+          <div class="col-md-2">
+            <div th:replace="~{fragments/dashboard :: menu-sidebar}"></div>
+          </div>
+          <div class="col-md-10">
+              <a href="/dadinho/src/main/resources/templates/bets/new.html" class="btn btn-primary float-end">
+                <i class="bi bi-plus-circle"></i> Nova bet
+              </a> 
+              <h1 class="display-5 fw-bold">Bets</h1>
+              <div class="clearfix"></div>
+              <hr>
+              <div class="table-responsive small"> 
+              <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Dealer</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="bet : ${bets}">
+                    <td th:text="${bet.id}"></td>
+                    <td th:text="${bet.name}"></td>
+                    <td th:text="${bet.user.name}"></td>
+                    <td>
+                     <a th:href="@{/bets/show/{id}(id=${bet.id})}" class="btn btn-primary btn-sm">Ver</a>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="6">Total de bets: <span th:text="${size}"></span></td>
+                  </tr>
+                </tfoot>
+              </table>
+          </div>
+          </div>
+        </div>
+        <div th:replace="~{fragments/dashboard :: footer}"></div>
+      </div>
+    </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

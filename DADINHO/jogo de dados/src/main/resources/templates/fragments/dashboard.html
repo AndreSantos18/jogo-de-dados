@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+
+
+  <div th:fragment="header">
+    <header class="pb-3 mb-4 border-bottom">
+      <div sec:authorize="isAuthenticated()" class="form-inline mt-2 mt-md-0 float-end">
+        <form th:action="@{/logout}" method="post">
+          <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user"></i> <span sec:authentication="name">User</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><button type="submit" class="dropdown-item">Sair</button></li>
+            </ul>
+          </div>
+        </form>
+      </div>
+      <div sec:authorize="!isAuthenticated()">
+        <a href="/login" class="btn btn-primary float-end">Login</a>
+      </div>
+      <a href="/" class="text-body-emphasis text-decoration-none">
+        <img src="/rolling-dice.gif" alt="Logo" class="img-fluid" width="30" height="30"> - <span class="fs-4"> Rolando os dados</span>
+      </a>
+    </header>
+  </div>
+
+
+  <div th:fragment="menu-sidebar">
+    <span class="badge rounded-pill text-bg-success mb-2 ms-2" style="font-size: 12px;" sec:authorize="hasRole('ADMIN')">Administrador</span>
+    <span class="badge rounded-pill text-bg-primary mb-2 ms-2" style="font-size: 12px;" sec:authorize="hasRole('USER')">Usuário</span>
+    <div class="sidebar border border-right p-0 bg-body-tertiary">
+      <div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="sidebarMenuLabel">Rolando os dados</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" th:href="@{/bets/index}">
+                <i class="bi bi-dice-6"></i>
+                Bets
+              </a>
+            </li>
+            <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+              <a class="nav-link d-flex align-items-center gap-2" th:href="@{/users/index}">
+                <i class="bi bi-people"></i>
+                Usuários
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div th:fragment="footer">
+    <footer class="pt-3 mt-4 text-body-secondary border-top">
+      Rolando os dados - &copy; 2025
+    </footer>
+  </div>
+
+  <div th:fragment="alert(${success}, ${error})">
+    <div th:if="${success} != null">
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong th:text="${success}"></strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+	
+    <div th:if="${error} != null">
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong th:text="${error}"></strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

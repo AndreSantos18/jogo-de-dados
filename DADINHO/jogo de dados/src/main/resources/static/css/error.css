@@ -1,0 +1,45 @@
+/* error.css */
+
+body {
+    background-color: #f0f2f5; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container da Mensagem de Erro */
+.bg-body-tertiary {
+    background-color: #fff !important; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 50px auto;
+}
+
+/* Títulos de Erro (Status, Error) */
+.h3, h2 {
+    color: #b90707; /* Texto de erro em vermelho */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Ícone de aviso */
+.bi-exclamation-triangle {
+    color: #b90707 !important; 
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+/* Botão Voltar */
+.btn-primary {
+    background-color: #b90707; 
+    border-color: #b90707;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #8f0707; 
+    border-color: #8f0707;
+}

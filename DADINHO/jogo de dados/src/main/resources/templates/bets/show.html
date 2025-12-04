@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${bet.title}">Detalhes da Aposta</title>
+</head>
+<body>
+<h1 th:text="${bet.title}">Título da Aposta</h1>
+<p><strong>Descrição:</strong> <span th:text="${bet.description}"></span></p>
+<p><strong>Dono da aposta:</strong> <span th:text="${bet.owner.username}"></span></p>
+
+<div th:if="${bet.winner != null}">
+    <h2>🏆 Vencedor: <span th:text="${bet.winner.username}"></span></h2>
+</div>
+
+<div th:if="${isOwner}">
+    <form th:action="@{'/bets/drawWinner/' + ${bet.id}}" method="post">
+        <button type="submit">🎲 Sortear Vencedor</button>
+    </form>
+    <form th:action="@{'/bets/edit/' + ${bet.id}}" method="get">
+        <button type="submit">✏️ Editar</button>
+    </form>
+    <form th:action="@{'/bets/delete/' + ${bet.id}}" method="post">
+        <input type="hidden" name="_method" value="delete" />
+        <button type="submit">🗑️ Deletar</button>
+    </form>
+</div>
+
+<div th:if="${!isOwner}">
+    <p>Você não é o dono desta aposta. Apenas o criador pode editar, deletar ou sortear vencedor.</p>
+</div>
+
+<a th:href="@{/bets/index}">⬅️ Voltar</a>
+</body>
+</html>

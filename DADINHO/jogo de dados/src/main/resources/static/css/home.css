@@ -1,0 +1,42 @@
+/* home.css */
+
+/* Fundo geral da página */
+body {
+    background-color: #f0f2f5; 
+}
+
+/* Container Principal (Jumbotron) */
+.bg-body-tertiary {
+    background-color: #fff !important; /* Fundo branco para a caixa de conteúdo */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.display-5.fw-bold {
+    color: #333;
+    border-bottom: 2px solid #b90707; /* Linha divisória vermelha */
+    padding-bottom: 10px;
+    margin-bottom: 25px !important;
+}
+
+/* Botão APOSTAR (principal) */
+.btn-primary.btn-lg {
+    background-color: #b90707; /* Vermelho do tema */
+    border-color: #b90707;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    font-size: 1.25rem;
+    transition: background-color 0.3s;
+}
+
+.btn-primary.btn-lg:hover {
+    background-color: #8f0707; /* Vermelho escuro no hover */
+    border-color: #8f0707;
+}
+
+/* Centralização do botão (garante que ele fique centralizado no layout) */
+.col-lg-8.col-xxl-6 {
+    margin: 30px auto !important; /* Margem superior/inferior, centraliza horizontalmente */
+}

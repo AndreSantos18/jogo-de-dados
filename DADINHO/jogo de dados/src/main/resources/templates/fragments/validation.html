@@ -1,0 +1,14 @@
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+  <div th:if="${#fields.hasAnyErrors()}" th:fragment="validation">	
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <div class="d-flex align-items-center" th:each="error : ${#fields.detailedErrors()}">
+        <i class="bi bi-exclamation-triangle text-danger"></i> 
+        <div th:text="${error.message}"></div>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	</div>
+</body>
+</html>

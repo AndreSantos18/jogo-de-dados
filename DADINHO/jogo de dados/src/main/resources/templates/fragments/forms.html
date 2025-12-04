@@ -1,0 +1,86 @@
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+  
+  <div th:fragment="user(${user})">
+    <form th:action="${user.id == null} ? @{|/users/create|} : @{|/users/update/${user.id}|}" th:object="${user}" method="post">
+      <div th:replace="~{fragments/validation :: validation}"></div>
+      <input th:if="${user.id != null}" type="hidden" name="_method" value="put" />
+      <div class="row mb-3">
+        <label for="name" class="col-sm-3 col-form-label"><strong>Nome:</strong></label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="name" th:field="*{name}">
+        </div>
+      </div>
+      <hr>
+      <div class="row mb-3">
+        <label for="email" class="col-sm-3 col-form-label"><strong>Email:</strong></label>
+        <div class="col-sm-9">
+          <input type="email" class="form-control" id="email" th:field="*{email}">
+        </div>
+      </div>
+      <hr>
+      <div class="row mb-3">
+        <label for="password" class="col-sm-3 col-form-label"><strong>Senha:</strong></label>
+        <div class="col-sm-9">
+          <input type="password" class="form-control" id="password" th:field="*{password}">
+        </div>
+      </div>
+      <hr>
+      <div class="row mb-3">
+        <label for="role" class="col-sm-3 col-form-label"><strong>Perfil:</strong></label>
+        <div class="col-sm-9">
+          <select class="form-select" id="role" name="role" th:field="*{role}">
+            <option value="USER" selected>Usuário</option>
+            <option value="ADMIN">Administrador</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <div class="mt-4">
+        <button type="submit" class="btn btn-primary">
+          <i class="bi bi-check-circle"></i> Salvar Alterações
+        </button>
+        <a th:href="@{|/users/show/${user.id}|}" class="btn btn-secondary">
+          <i class="bi bi-x-circle"></i> Cancelar
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <div th:fragment="bet(${bet, users})">
+    <form th:action="${bet.id == null} ? @{|/bets/create|} : @{|/bets/update/${bet.id}|}" th:object="${bet}" method="post">
+      <div th:replace="~{fragments/validation :: validation}"></div>
+      <input th:if="${bet.id != null}" type="hidden" name="_method" value="put" />
+      <div class="row mb-3">
+        <label for="name" class="col-sm-3 col-form-label"><strong>Nome:</strong></label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="name" th:field="*{name}">
+        </div>
+      </div>
+      <hr>
+      <div class="row mb-3">
+        <label for="user" class="col-sm-3 col-form-label"><strong>Dealer:</strong></label>
+        <div class="col-sm-9">
+          <label for="user_id">Dealer</label>
+          <select id="user_id" class="form-control" th:field="*{user.id}">
+            <option value="">Selecione um usuário</option>
+            <option th:each="u : ${users}" 
+                    th:value="${u.id}" th:text="${u.name}">Selecione</option>
+          </select>
+        </div>
+      </div>
+      <hr>
+      <div class="mt-4">
+        <button type="submit" class="btn btn-primary">
+          <i class="bi bi-check-circle"></i> Salvar nova bet
+        </button>
+        <a href="/bets/index" class="btn btn-secondary">
+          <i class="bi bi-x-circle"></i> Cancelar
+        </a>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
